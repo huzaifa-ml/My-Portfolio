@@ -1,0 +1,819 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system: premium dark charcoal + gold (AI Automation Architect).
+ * All colors in oklch. Dark-only palette applied on :root.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-dark: var(--gold-dark);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-input: var(--surface-input);
+  --color-surface-item: var(--surface-item);
+  --color-surface-tag: var(--surface-tag);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Centralized Theme Specification */
+  --bg-primary: #110D0A;
+  --bg-secondary: #100D0A;
+
+  --surface: #1D1A16;
+  --surface-secondary: #1A1714;
+  --surface-input: #15130F;
+  --surface-item: #171411;
+  --surface-tag: #24201B;
+
+  --text-primary: #F1EEE9;
+  --text-secondary: #9F9B94;
+  --text-muted: #85817A;
+
+  --accent: #F4B93C;
+  --accent-hover: #FFD05A;
+  --accent-dark: #B98725;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(244, 185, 60, 0.30);
+
+  /* Semantic mappings */
+  --background: #110D0A;
+  --foreground: #F1EEE9;
+  --card: #1D1A16;
+  --card-foreground: #F1EEE9;
+  --popover: #1D1A16;
+  --popover-foreground: #F1EEE9;
+  --primary: #F4B93C;
+  --primary-foreground: #110D0A;
+  --secondary: #1A1714;
+  --secondary-foreground: #F1EEE8;
+  --muted: #1A1714;
+  --muted-foreground: #A9A5A0;
+  --destructive: oklch(0.6 0.19 25);
+  --destructive-foreground: #F1EEE9;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: #15130F;
+  --ring: rgba(244, 185, 60, 0.55);
+
+  --gold: #F4B93C;
+  --gold-soft: #FFD05A;
+  --gold-dark: #B98725;
+  --surface-2: #1A1714;
+
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --glow-gold: 0 0 18px rgba(244, 185, 60, 0.18);
+  --glow-gold-hover: 0 0 24px rgba(244, 185, 60, 0.25);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(244, 185, 60, 0.3);
+    color: #F1EEE9;
+  }
+
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+}
+
+@utility surface-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  transition:
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  &:hover {
+    border-color: rgba(244, 185, 60, 0.25);
+    transform: translateY(-4px);
+    box-shadow:
+      var(--shadow-card),
+      0 0 20px -8px rgba(244, 185, 60, 0.14);
+  }
+}
+
+@utility gold-glow {
+  box-shadow: var(--glow-gold);
+}
+
+
+@utility ambient-gold {
+  background-image:
+    radial-gradient(
+      60% 50% at 75% 25%,
+      rgba(120, 80, 15, 0.06),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 40% at 20% 80%,
+      rgba(80, 55, 15, 0.05),
+      transparent 70%
+    );
+}
+
+@utility ambient-contact {
+  background-image:
+    radial-gradient(
+      70% 60% at 50% 30%,
+      rgba(100, 65, 15, 0.08),
+      transparent 70%
+    );
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  95% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 55%, transparent);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@utility orbit-spin {
+  animation: orbit-spin 70s linear infinite;
+}
+
+@utility orbit-counter {
+  animation: orbit-counter 70s linear infinite;
+}
+
+@utility ring-spin {
+  animation: orbit-spin 120s linear infinite;
+}
+
+@utility float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
+@utility caret-blink {
+  animation: caret-blink 1.05s steps(1, end) infinite;
+}
+
+@utility pulse-dot {
+  animation: pulse-dot 2.4s ease-in-out infinite;
+}
+
+/* ---- Hero orbital system ---- */
+@keyframes node-float {
+  0%,
+  100% {
+    transform: translate3d(0, -4px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility node-orbit {
+  animation-name: orbit-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility node-counter {
+  animation-name: orbit-counter;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@utility node-float {
+  animation: node-float 7.5s ease-in-out infinite;
+}
+
+@utility ring-slow {
+  animation: orbit-spin 180s linear infinite;
+}
+
+@utility ring-slow-rev {
+  animation: orbit-counter 240s linear infinite;
+}
+
+@utility ring-drift {
+  animation: orbit-spin 60s linear infinite;
+}
+
+@utility hero-node-in {
+  opacity: 0;
+  animation: hero-fade 0.7s ease-out forwards;
+}
+
+@utility hero-stage-1 {
+  opacity: 0;
+  animation: hero-fade 0.9s ease-out 0.05s forwards;
+}
+
+@utility hero-stage-2 {
+  opacity: 0;
+  animation: hero-fade 1.1s ease-out 0.45s forwards;
+}
+
+@utility hero-stage-4 {
+  opacity: 0;
+  animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+}
+
+@utility hero-stage-6 {
+  opacity: 0;
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.3s forwards;
+}
+
+@utility hero-stage-6b {
+  opacity: 0;
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.42s forwards;
+}
+
+@utility hero-stage-6c {
+  opacity: 0;
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.54s forwards;
+}
+
+@utility hero-stage-7 {
+  opacity: 0;
+  animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.8s forwards;
+}
+
+/* ---- Cinematic home hero ---- */
+@keyframes portrait-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(1.5%, 1.5%, 0) scale(1.015);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.cinema-hero {
+  /* Cohesive dark interior environment: deep charcoal / near-black base matching portrait */
+  background-color: #0E0C0B;
+
+  /* Subtle, sophisticated architectural interior atmosphere blending seamlessly across the hero */
+  background-image:
+    /* 1. Subtle warm charcoal ambient depth on the left wall — extending portrait's architectural tone */
+    radial-gradient(
+      ellipse 85% 75% at 22% 48%,
+      rgba(40, 30, 26, 0.32) 0%,
+      rgba(26, 20, 18, 0.16) 55%,
+      transparent 80%
+    ),
+    /* 2. Top architectural shadow — keeps navbar clean and matches photo's dark ceiling edge */
+    linear-gradient(
+      180deg,
+      rgba(10, 8, 8, 0.65) 0%,
+      rgba(14, 12, 11, 0.20) 25%,
+      transparent 45%
+    ),
+    /* 3. Bottom ground shadow — ensures seamless transition into the following section */
+    linear-gradient(
+      0deg,
+      rgba(10, 8, 8, 0.75) 0%,
+      rgba(14, 12, 11, 0.20) 18%,
+      transparent 35%
+    ),
+    /* 4. Left outer edge natural falloff */
+    linear-gradient(
+      90deg,
+      rgba(10, 8, 8, 0.40) 0%,
+      transparent 14%
+    ),
+    /* 5. Seamless center transition — bridges left wall into the portrait's deep right background */
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(22, 18, 16, 0.15) 35%,
+      rgba(16, 13, 12, 0.10) 65%,
+      transparent 100%
+    );
+}
+
+.cinema-portrait {
+  animation: portrait-reveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  filter: saturate(0.95) contrast(1.03);
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, black 56px, black 100%),
+    linear-gradient(to bottom, transparent 0%, black 40px, black 100%);
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 56px, black 100%),
+    linear-gradient(to bottom, transparent 0%, black 40px, black 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+/* Hero Navbar link hover underline animation */
+.hero-nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.hero-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--foreground);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.hero-nav-link:hover::after {
+  opacity: 0.95;
+  transform: scaleX(1);
+}
+
+.cinema-signature {
+  font-family: "Alex Brush", "Mrs Saint Delafield", "WindSong", "Caveat", cursive;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  color: color-mix(in oklab, var(--text-primary) 70%, transparent);
+  transform: rotate(-4deg);
+  text-shadow: none;
+}
+
+.cinema-hero .hero-stage-4 {
+  animation-delay: 0.8s;
+}
+
+.cinema-hero .hero-stage-6 {
+  animation-delay: 0.32s;
+}
+
+.cinema-hero .hero-stage-6b {
+  animation-delay: 0.44s;
+}
+
+.cinema-hero .hero-stage-6c {
+  animation-delay: 0.56s;
+}
+
+.cinema-hero .hero-stage-7 {
+  animation-delay: 0.72s;
+}
+
+/* Scroll-down indicator floating animation — entire group moves together */
+@keyframes hero-indicator-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.hero-scroll-indicator {
+  animation: hero-indicator-float 2.8s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+  opacity: 0.95;
+}
+
+/* Mobile styling (< 64rem / 1024px) — editorial magazine layout */
+@media (max-width: 63.999rem) {
+  .cinema-hero {
+    min-height: 100svh;
+    height: 100svh;
+  }
+
+  /* Centered portrait framing matching Huzaifa's face position in huzaifa-hero.jpg */
+  .cinema-hero .cinema-portrait {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    height: 58vh;
+    max-height: 530px;
+    object-fit: cover;
+    object-position: 78% bottom;
+  }
+
+  /* Signature anchored beside portrait's ear/shoulder area on the left with steep angle */
+  .cinema-hero .cinema-signature {
+    left: 10%;
+    right: auto;
+    top: 70%;
+    bottom: 33%;
+    transform: rotate(-25deg) scale(0.58);
+    font-size: 2rem;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  /* Clean mobile stacked heading */
+  .cinema-hero .hero-heading {
+    font-weight: 700;
+  }
+
+  .cinema-hero .hero-word-think {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .cinema-hero .hero-word-build,
+  .cinema-hero .hero-word-scale {
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Mobile-only signature adjustment (< 48rem / 768px) */
+@media (max-width: 47.999rem) {
+  .cinema-hero .cinema-signature {
+    top: 60%;
+    bottom: auto;
+  }
+}
+
+/* Tablet (768px–1023px) */
+@media (min-width: 48rem) and (max-width: 63.999rem) {
+  .cinema-hero .cinema-portrait {
+    height: 109.48vh;
+    max-height: 991px;
+    object-position: 15% bottom;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+  /* Hide technology icons on tablet */
+  .cinema-hero .cinema-tech {
+    display: none !important;
+  }
+
+  /* Move text down by 5% and scale text by 20% for tablet */
+  .cinema-hero .cinema-copy {
+    margin-top: 5%;
+    transform: translateX(-3%) scale(1.2);
+    transform-origin: left top;
+  }
+
+  /* Hide View My Work button */
+  .cinema-hero a[href="#projects"] {
+    display: none !important;
+  }
+
+  /* Position signature between ear and shoulder on the right side of the portrait */
+  .cinema-hero .cinema-signature {
+    left: auto !important;
+    right: 6% !important;
+    top: 55% !important;
+    bottom: auto !important;
+    transform: rotate(-12deg) scale(0.65) !important;
+  }
+}
+
+/* Desktop styling (>= 64rem / 1024px) — 100% strictly preserved */
+@media (min-width: 64rem) {
+  .cinema-hero {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .cinema-hero .cinema-portrait {
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: auto;
+    height: 96%;
+    max-height: none;
+    max-width: none;
+    transform: none;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  .cinema-hero .cinema-signature {
+    left: 72%;
+    top: 36%;
+    right: auto;
+    bottom: auto;
+    transform: translate(50%, -40%) rotate(-12deg) scale(0.58);
+    font-size: clamp(2.2rem, 3.4vw, 3.6rem);
+    text-align: right;
+  }
+
+  /* Restore desktop heading: all words bold */
+  .cinema-hero .hero-word-think {
+    font-weight: 700;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* Specific fix for iPad Pro & large portrait screens (e.g. 1032x1376) */
+@media (min-width: 64rem) and (max-aspect-ratio: 1/1) {
+  .cinema-hero {
+    position: relative;
+  }
+
+  .cinema-hero .cinema-portrait {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+    object-fit: cover;
+    object-position: center bottom;
+    filter: none;
+  }
+
+  /* Signature positioned between ear and shoulder on the right side of portrait */
+  .cinema-hero .cinema-signature {
+    left: auto !important;
+    right: 6% !important;
+    top: 55% !important;
+    bottom: auto !important;
+    transform: rotate(-12deg) scale(0.65) !important;
+  }
+
+  /* Hero text scaled up by 20% for tablet */
+  .cinema-hero .cinema-copy {
+    transform: translateX(10%) scale(1.2);
+    transform-origin: left top;
+    margin-top: 3rem;
+  }
+}
+
+
+@media (min-width: 80rem) {
+  .cinema-hero .cinema-signature {
+    top: 38%;
+  }
+}
+
+.mobile-nav-drawer {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.mobile-nav-drawer.mobile-nav-open {
+  max-height: 300px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+@media (hover: hover) {
+  @media (pointer: fine) {
+    @media (min-width: 64rem) {
+      .project-pointer-preview {
+        display: block;
+      }
+    }
+  }
+
+  .whatsapp-fab:hover {
+    width: 10.5rem;
+  }
+
+  .whatsapp-fab:hover .whatsapp-fab-label {
+    max-width: 8rem;
+    padding-right: 1.25rem;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---- Custom smooth cursor (pointer devices only, not touch) ---- */
+@media (min-width: 64rem) and (max-width: 74.9375rem) {
+  /* Tablet extension (1024px–1199px) – hide icons and shrink portrait */
+  .cinema-hero .cinema-portrait {
+    height: 109.48vh; /* 10% increase from 99.53vh */
+    max-height: 991px; /* 10% increase from 901px */
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  /* Hide technology icons on tablet */
+  .cinema-hero .cinema-tech {
+    display: none !important;
+  }
+
+  /* Move text down by 5% and left by 3% */
+  .cinema-hero .cinema-copy {
+    margin-top: 5%;
+    transform: translateX(-3%);
+  }
+
+  /* Hide View My Work button */
+  .cinema-hero a[href="#projects"] {
+    display: none !important;
+  }
+
+  /* Move signature down by 30% and right by 10% */
+  .cinema-hero .cinema-signature {
+    right: 15%;
+        top: 70%;
+    transform: rotate(-25deg) scale(0.63);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  body,
+  * {
+    cursor: none !important;
+  }
+
+  #cursor-dot,
+  #cursor-ring {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    will-change: transform;
+    top: 0;
+    left: 0;
+  }
+
+  #cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
+  }
+
+  #cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid color-mix(in oklab, var(--gold) 60%, transparent);
+    background: transparent;
+    transition:
+      width 0.2s ease,
+      height 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      opacity 0.2s;
+  }
+
+  body:has(a:hover) #cursor-ring,
+  body:has(button:hover) #cursor-ring {
+    width: 44px;
+    height: 44px;
+    border-color: var(--gold);
+    background-color: color-mix(in oklab, var(--gold) 12%, transparent);
+  }
+}
