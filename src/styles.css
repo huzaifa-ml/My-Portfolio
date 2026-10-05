@@ -567,11 +567,28 @@
   }
 }
 
-/* Mobile-only signature adjustment (< 48rem / 768px) */
+/* Mobile-only Hero refinements (< 48rem / 768px) */
 @media (max-width: 47.999rem) {
+  /* 1. Reduce portrait size slightly for breathing room */
+  .cinema-hero .cinema-portrait {
+    height: 48vh !important;
+    max-height: 430px !important;
+    object-position: 78% bottom;
+  }
+
+  /* 2. Move THINK / BUILD / SCALE graphic upward away from portrait head */
+  .cinema-hero .hero-mobile-think-build-scale {
+    margin-top: 0.75rem !important;
+    transform: translateY(0%) scale(0.95) !important;
+  }
+
+  /* 3. Position signature beside ear/shoulder area on left side of portrait */
   .cinema-hero .cinema-signature {
-    top: 60%;
-    bottom: auto;
+    left: 8% !important;
+    right: auto !important;
+    top: 61% !important;
+    bottom: auto !important;
+    transform: rotate(-18deg) scale(0.55) !important;
   }
 }
 
