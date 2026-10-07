@@ -26,11 +26,11 @@ export function About() {
                   className="h-[4.5rem] w-[4.5rem] shrink-0 rounded-full border-none object-cover object-top shadow-none"
                 />
                 <div className="flex flex-col">
-                  <p className="font-display text-2xl font-bold uppercase tracking-tight text-foreground sm:text-3xl whitespace-nowrap">
+                  <p className="font-display text-xl font-bold uppercase tracking-tight text-foreground sm:text-3xl whitespace-nowrap">
                     MUHAMMAD HUZAIFA
                   </p>
                   <h3 className="mt-1 font-display text-base font-semibold text-gold sm:text-lg">
-                    AI Automation Architect &amp; AI Student
+                    Automation Architect &amp; Student
                   </h3>
                 </div>
               </div>
