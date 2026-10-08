@@ -589,10 +589,10 @@
   /* 3. Position signature beside ear/shoulder area on left side of portrait */
   .cinema-hero .cinema-signature {
     left: auto !important;
-    right: 8% !important;
+    right: 3% !important;
     top: 61% !important;
     bottom: auto !important;
-    transform: rotate(-18deg) scale(0.55) !important;
+    transform: rotate(-18deg) scale(0.52) !important;
   }
 }
 
