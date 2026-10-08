@@ -134,7 +134,7 @@ export function Contact() {
                 key={label}
                 href={href}
                 {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
-                className="surface-card w-full group flex items-center gap-4 p-5"
+                className="surface-card w-full box-border group flex items-center gap-4 p-5"
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[var(--gold)]/35 bg-[var(--gold)]/10 text-[var(--gold)]">
                   <Icon className="h-4 w-4" aria-hidden="true" />
@@ -157,7 +157,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={100}>
-          <div className="surface-card w-full p-6 sm:p-8">
+          <div className="surface-card w-full box-border p-6 sm:p-8">
             {!started ? (
               <div className="animate-in fade-in duration-500">
                 <span className="text-[0.65rem] uppercase tracking-[0.28em] text-[var(--gold)]">
