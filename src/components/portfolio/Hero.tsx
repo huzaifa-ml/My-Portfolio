@@ -111,7 +111,7 @@ export function Hero() {
 
       {/* Signature — beside ear/shoulder area matching desktop visual relationship */}
       <div className="hero-stage-4 pointer-events-none absolute inset-0 z-[5]">
-        <p className="cinema-signature absolute text-left lg:text-right leading-[1.05] text-[var(--foreground)]/65">
+        <p className="cinema-signature absolute text-left lg:text-right leading-[1.05] text-[var(--foreground)]/65 transform translate-x-[25%] translate-y-[55%] lg:translate-x-0 lg:translate-y-0">
           Muhammad
           <br />
           Huzaifa
@@ -127,7 +127,7 @@ export function Hero() {
           </p>
 
           {/* MOBILE-ONLY THINK BUILD SCALE GRAPHIC */}
-          <div className="hero-mobile-think-build-scale block mt-16 sm:mt-20 pr-4 sm:pr-6 text-right ml-auto relative select-none lg:hidden" style={{ transform: 'translateY(10%) scale(1.05)' }}>
+          <div className="hero-mobile-think-build-scale block mt-16 sm:mt-20 pr-4 sm:pr-6 text-right ml-auto relative select-none lg:hidden" style={{ transform: 'translateY(10%) scale(1.05)', marginRight: '40%' }}>
             <div className="hero-tbs-block relative inline-block text-right" style={{ transform: 'rotate(-6deg) skewX(-12deg)' }}>
               
               {/* THINK — noticeably thin/lightweight */}
