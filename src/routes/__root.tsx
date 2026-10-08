@@ -82,6 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Muhammad Huzaifa" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://mrzaif.site/" },
+      { name: "twitter:url", content: "https://mrzaif.site/" },
     ],
     links: [
       {
@@ -99,6 +101,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a1410'/%3E%3Ctext x='16' y='23' font-family='system-ui,sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23d4a843'%3EH%3C/text%3E%3C/svg%3E",
         type: "image/svg+xml",
       },
+      { rel: "canonical", href: "https://mrzaif.site/" },
     ],
   }),
 
