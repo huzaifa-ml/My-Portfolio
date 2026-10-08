@@ -636,10 +636,10 @@
 /* Tablet additional tweaks for hero text */
 @media (min-width: 48rem) and (max-width: 63.999rem) {
   .cinema-hero .hero-mobile-think-build-scale {
-    transform: translateY(10%) scale(1.26) !important;
+    transform: translateY(10%) scale(1.39) !important;
   }
   .cinema-hero .hero-stage-7 p {
-    font-size: 1.2rem;
+    font-size: 1.32rem;
   }
 }
 
