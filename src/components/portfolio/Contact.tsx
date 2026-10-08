@@ -126,7 +126,7 @@ export function Contact() {
         subtitle="Tell me about the process you want to automate — or the AI system you want to exist."
       />
 
-      <div className="mt-12 grid items-start gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="mt-12 grid grid-cols-1 items-start gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <Reveal>
           <div className="flex flex-col gap-3">
             {CHANNELS.map(({ label, value, href, Icon, external }) => (
