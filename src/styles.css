@@ -544,8 +544,8 @@
     right: auto;
     top: 70%;
     bottom: 33%;
-    transform: rotate(-25deg) scale(0.58);
-    font-size: 2rem;
+    transform: rotate(-25deg) scale(0.55);
+    font-size: 1.9rem;
     text-align: left;
     white-space: nowrap;
   }
@@ -579,13 +579,13 @@
   /* 2. Move THINK / BUILD / SCALE graphic upward away from portrait head */
   .cinema-hero .hero-mobile-think-build-scale {
     margin-top: 0.75rem !important;
-    transform: translateY(0%) scale(0.95) !important;
+    transform: translate(-10%, 15%) scale(0.95) !important;
   }
 
   /* 3. Position signature beside ear/shoulder area on left side of portrait */
   .cinema-hero .cinema-signature {
-    left: 8% !important;
-    right: auto !important;
+    left: auto !important;
+    right: 8% !important;
     top: 61% !important;
     bottom: auto !important;
     transform: rotate(-18deg) scale(0.55) !important;
