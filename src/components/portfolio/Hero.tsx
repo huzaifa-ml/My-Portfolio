@@ -111,7 +111,7 @@ export function Hero() {
 
       {/* Signature — beside ear/shoulder area matching desktop visual relationship */}
       <div className="hero-stage-4 pointer-events-none absolute inset-0 z-[5]">
-        <p className="cinema-signature absolute text-left lg:text-right leading-[1.05] text-[var(--foreground)]/65 transform translate-x-[25%] translate-y-[60%] lg:translate-x-0 lg:translate-y-0">
+        <p className="cinema-signature absolute text-left lg:text-right leading-[1.05] text-[var(--foreground)]/65 transform translate-x-[25%] translate-y-[65%] lg:translate-x-0 lg:translate-y-0">
           Muhammad
           <br />
           Huzaifa
