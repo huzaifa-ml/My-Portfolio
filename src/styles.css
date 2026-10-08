@@ -575,6 +575,10 @@
     max-height: 430px !important;
     object-position: 78% bottom;
   }
+  /* Move portrait left 5% on mobile only */
+  .cinema-hero .cinema-portrait {
+    transform: translateX(-5%);
+  }
 
   /* 2. Move THINK / BUILD / SCALE graphic upward away from portrait head */
   .cinema-hero .hero-mobile-think-build-scale {
