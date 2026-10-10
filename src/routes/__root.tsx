@@ -82,6 +82,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Muhammad Huzaifa" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:url", content: "https://mrzaif.site/" },
+      { name: "google-site-verification", content: "2L6cKDbYNDFuXKiGUL-N_qjXJhpOTQKhvrgb3RLFlkQ" },
     ],
     links: [
       {
@@ -114,6 +116,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "apple-touch-icon",
         href: "/favicon.png",
       },
+      { rel: "canonical", href: "https://mrzaif.site/" },
     ],
   }),
 
